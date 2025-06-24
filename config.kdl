@@ -1,0 +1,197 @@
+input {
+    keyboard {
+        xkb {
+            model "pc105"
+            layout "de"
+            variant ""
+            options "ctrl:nocaps"
+        }
+    }
+    touchpad { tap; }
+    warp-mouse-to-focus
+    focus-follows-mouse
+}
+
+prefer-no-csd
+
+layout {
+    gaps 0.0
+    preset-column-widths {
+        proportion 1.0
+    }
+    default-column-width {
+        proportion 1.0
+    }
+    focus-ring { off; }
+    border { off; }
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+}
+
+output "winit" {
+    background-color "#000000"
+}
+
+output "eDP-1" {
+    background-color "#000000"
+}
+
+animations { off; }
+
+window-rule {
+    match title="gmrun"
+
+    open-floating true
+}
+
+window-rule {
+    match app-id="^CENTERED$"
+
+    open-floating true
+}
+
+binds {
+    Mod+Shift+q { quit; }
+
+    Mod+Return { spawn "alacritty"; }
+    Mod+p      { spawn "gmrun";     }
+
+    Mod+o {
+        w { spawn "firefox";                    submap-set; }
+        p { spawn "firefox" "--private-window"; submap-set; }
+
+        s { spawn "steam";                      submap-set; }
+
+        f { spawn "nautilus";                   submap-set; }
+        k { spawn "kdeconnect-app";             submap-set; }
+
+        Mod+Escape { submap-set; }
+    }
+
+    Mod+c {
+              n { spawn "dunstctl" "set-paused" "toggle"; submap-set; }
+        shift+n { spawn "dunstctl" "close"              ; submap-set; }
+          alt+n { spawn "dunstctl" "history-pop"        ; submap-set; }
+
+        m {
+            spawn "sh" "-c" "dunstify \"Test Message: $(tr -dc '[:digit:]' < /dev/random | head -c4)\"";
+            submap-set
+        }
+
+        s { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy";  submap-set; }
+
+        t { 
+            spawn "sh" "-c" "grim -g \"$(slurp)\" - | tesseract - - | wl-copy"
+            submap-set
+        }
+        q {
+            spawn "sh" "-c" "grim -g \"$(slurp)\" - | zbarimg -     | wl-copy"
+            submap-set
+        }
+
+        Mod+Escape { submap-set; }
+    }
+
+    XF86AudioMute {
+        spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"
+    }
+    XF86AudioRaiseVolume {
+        spawn "pactl" "set-sink-mute"   "@DEFAULT_SINK@" "false"
+        spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@"   "+5%"
+    }
+    XF86AudioLowerVolume {
+        spawn "pactl" "set-sink-mute"   "@DEFAULT_SINK@" "false"
+        spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@"   "-5%"
+    }
+
+    Mod+h { focus-column-or-monitor-left  ; }
+    Mod+k { focus-window-or-workspace-up  ; }
+    Mod+j { focus-window-or-workspace-down; }
+    Mod+l { focus-column-or-monitor-right ; }
+
+    Mod+shift+h { swap-window-left                      ; }
+    Mod+shift+k { move-window-up-or-to-workspace-up     ; }
+    Mod+shift+j { move-window-down-or-to-workspace-down ; }
+    Mod+shift+l { swap-window-right                     ; }
+
+          Mod+f { toggle-windowed-fullscreen; }
+    Mod+shift+f { set-column-width "100%"   ; }
+
+          Mod+s { switch-focus-between-floating-and-tiling; }
+    Mod+shift+s { toggle-window-floating; }
+
+
+          Mod+1 { spawn "niri-workspace-manager"   "goto-register" "1"; }
+          Mod+2 { spawn "niri-workspace-manager"   "goto-register" "2"; }
+          Mod+3 { spawn "niri-workspace-manager"   "goto-register" "3"; }
+          Mod+4 { spawn "niri-workspace-manager"   "goto-register" "4"; }
+          Mod+5 { spawn "niri-workspace-manager"   "goto-register" "5"; }
+          Mod+6 { spawn "niri-workspace-manager"   "goto-register" "6"; }
+          Mod+7 { spawn "niri-workspace-manager"   "goto-register" "7"; }
+          Mod+8 { spawn "niri-workspace-manager"   "goto-register" "8"; }
+          Mod+9 { spawn "niri-workspace-manager"   "goto-register" "9"; }
+
+    Mod+shift+1 { spawn "niri-workspace-manager" "moveto-register" "1"; }
+    Mod+shift+2 { spawn "niri-workspace-manager" "moveto-register" "2"; }
+    Mod+shift+3 { spawn "niri-workspace-manager" "moveto-register" "3"; }
+    Mod+shift+4 { spawn "niri-workspace-manager" "moveto-register" "4"; }
+    Mod+shift+5 { spawn "niri-workspace-manager" "moveto-register" "5"; }
+    Mod+shift+6 { spawn "niri-workspace-manager" "moveto-register" "6"; }
+    Mod+shift+7 { spawn "niri-workspace-manager" "moveto-register" "7"; }
+    Mod+shift+8 { spawn "niri-workspace-manager" "moveto-register" "8"; }
+    Mod+shift+9 { spawn "niri-workspace-manager" "moveto-register" "9"; }
+
+    Mod+m {
+            "1" { spawn "niri-workspace-manager"   "goto" "1"; }
+            "2" { spawn "niri-workspace-manager"   "goto" "2"; }
+            "3" { spawn "niri-workspace-manager"   "goto" "3"; }
+            "4" { spawn "niri-workspace-manager"   "goto" "4"; }
+            "5" { spawn "niri-workspace-manager"   "goto" "5"; }
+            "6" { spawn "niri-workspace-manager"   "goto" "6"; }
+            "7" { spawn "niri-workspace-manager"   "goto" "7"; }
+            "8" { spawn "niri-workspace-manager"   "goto" "8"; }
+            "9" { spawn "niri-workspace-manager"   "goto" "9"; }
+
+        shift+1 { spawn "niri-workspace-manager" "moveto" "1"; }
+        shift+2 { spawn "niri-workspace-manager" "moveto" "2"; }
+        shift+3 { spawn "niri-workspace-manager" "moveto" "3"; }
+        shift+4 { spawn "niri-workspace-manager" "moveto" "4"; }
+        shift+5 { spawn "niri-workspace-manager" "moveto" "5"; }
+        shift+6 { spawn "niri-workspace-manager" "moveto" "6"; }
+        shift+7 { spawn "niri-workspace-manager" "moveto" "7"; }
+        shift+8 { spawn "niri-workspace-manager" "moveto" "8"; }
+        shift+9 { spawn "niri-workspace-manager" "moveto" "9"; }
+
+        b {
+                "1" { spawn "workspace-selector.sh" "workspace" "1"; submap-set; }
+                "2" { spawn "workspace-selector.sh" "workspace" "2"; submap-set; }
+                "3" { spawn "workspace-selector.sh" "workspace" "3"; submap-set; }
+                "4" { spawn "workspace-selector.sh" "workspace" "4"; submap-set; }
+                "5" { spawn "workspace-selector.sh" "workspace" "5"; submap-set; }
+                "6" { spawn "workspace-selector.sh" "workspace" "6"; submap-set; }
+                "7" { spawn "workspace-selector.sh" "workspace" "7"; submap-set; }
+                "8" { spawn "workspace-selector.sh" "workspace" "8"; submap-set; }
+                "9" { spawn "workspace-selector.sh" "workspace" "9"; submap-set; }
+
+            shift+1 { spawn "niri-workspace-manager" "unbind" "1"  ; }
+            shift+2 { spawn "niri-workspace-manager" "unbind" "2"  ; }
+            shift+3 { spawn "niri-workspace-manager" "unbind" "3"  ; }
+            shift+4 { spawn "niri-workspace-manager" "unbind" "4"  ; }
+            shift+5 { spawn "niri-workspace-manager" "unbind" "5"  ; }
+            shift+6 { spawn "niri-workspace-manager" "unbind" "6"  ; }
+            shift+7 { spawn "niri-workspace-manager" "unbind" "7"  ; }
+            shift+8 { spawn "niri-workspace-manager" "unbind" "8"  ; }
+            shift+9 { spawn "niri-workspace-manager" "unbind" "9"  ; }
+
+                  b { spawn "workspace-selector.sh" "workspace"    ; }
+
+            Mod+Escape { submap-set; }
+        }
+
+        Mod+Escape { submap-set; }
+    }
+}

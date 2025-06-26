@@ -12,6 +12,16 @@ input {
     focus-follows-mouse
 }
 
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 prefer-no-csd
 
 layout {
@@ -57,7 +67,8 @@ window-rule {
 binds {
     Mod+Shift+q { quit; }
 
-    Mod+Return { spawn "alacritty"; }
+    Mod+Return       { spawn "alacritty"; }
+    Mod+shift+Return { spawn "alacritty-ui.sh" "bash"; }
     Mod+p      { spawn "gmrun";     }
 
     Mod+o {
@@ -121,8 +132,10 @@ binds {
           Mod+f { toggle-windowed-fullscreen; }
     Mod+shift+f { set-column-width "100%"   ; }
 
-          Mod+s { switch-focus-between-floating-and-tiling; }
-    Mod+shift+s { toggle-window-floating; }
+    Mod+s { toggle-window-floating; }
+    Mod+e { switch-focus-between-floating-and-tiling; }
+
+    Mod+w { close-window; }
 
 
           Mod+1 { spawn "niri-workspace-manager"   "goto-register" "1"; }
@@ -187,7 +200,7 @@ binds {
             shift+8 { spawn "niri-workspace-manager" "unbind" "8"  ; }
             shift+9 { spawn "niri-workspace-manager" "unbind" "9"  ; }
 
-                  b { spawn "workspace-selector.sh" "workspace"    ; }
+                  b { spawn "workspace-selector.sh" "workspace"    ; submap-set; }
 
             Mod+Escape { submap-set; }
         }

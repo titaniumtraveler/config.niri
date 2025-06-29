@@ -202,9 +202,11 @@ binds {
 
                   b { spawn "workspace-selector.sh" "workspace"    ; submap-set; }
 
+                Escape { submap-set; }
             Mod+Escape { submap-set; }
         }
 
+            Escape { submap-set; }
         Mod+Escape { submap-set; }
     }
 }

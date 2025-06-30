@@ -40,13 +40,6 @@ layout {
         top 0
         bottom 0
     }
-}
-
-output "winit" {
-    background-color "#000000"
-}
-
-output "eDP-1" {
     background-color "#000000"
 }
 

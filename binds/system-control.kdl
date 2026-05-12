@@ -1,0 +1,44 @@
+binds {
+    Mod+c {
+        "1" { spawn "ddcutil" "setvcp" "D6" "0x01"; submap-set; }
+
+              n { spawn "dunstctl" "set-paused" "toggle"; submap-set; }
+        shift+n { spawn "dunstctl" "close"              ; submap-set; }
+          alt+n { spawn "dunstctl" "history-pop"        ; submap-set; }
+
+        m { spawn "bash" "-c" r#"dunstify "Test Message: $(tr -dc '[:digit:]' < /dev/random | head -c4)""#; submap-set; }
+
+        s { spawn "bash" "-c" r#"grim -g "$(slurp)" - |                 wl-copy"#                         ; submap-set; }
+  shift+s { spawn "bash" "-c" r#"grim -g "$(slurp)" - | okular -               "#                         ; submap-set; }
+        t { spawn "bash" "-c" r#"grim -g "$(slurp)" - | tesseract - - | wl-copy"#                         ; submap-set; }
+        q { spawn "bash" "-c" r#"grim -g "$(slurp)" - | zbarimg -     | wl-copy"#                         ; submap-set; }
+
+        e { spawn "uri_fragmentize.sh"; submap-set; }
+        i { spawn "bash" "-c" r#"
+                wl-paste -n |
+                    jq --raw-input --raw-output 'include "uri_clean"; main' |
+                    wl-copy "#
+            submap-set
+        }
+
+        d { debug-toggle-damage; submap-set; }
+
+            Escape { submap-set; }
+        Mod+Escape { submap-set; }
+    }
+
+    XF86AudioMute {
+        spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"
+    }
+    XF86AudioRaiseVolume {
+        spawn "pactl" "set-sink-mute"   "@DEFAULT_SINK@" "false"
+        spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@"   "+5%"
+    }
+    XF86AudioLowerVolume {
+        spawn "pactl" "set-sink-mute"   "@DEFAULT_SINK@" "false"
+        spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@"   "-5%"
+    }
+
+    XF86AudioPlay  { spawn "playerctl" "play-pause"; }
+    XF86AudioPause { spawn "playerctl" "play-pause"; }
+}

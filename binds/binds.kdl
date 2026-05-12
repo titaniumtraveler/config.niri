@@ -1,0 +1,11 @@
+include "./applications.kdl"
+include "./niri-workspace-manager.kdl"
+include "./system-control.kdl"
+include "./windows.kdl"
+include "./debug.kdl"
+
+binds {
+    Mod+Shift+q { quit; }
+    Mod+Escape { submap-set; }
+}
+

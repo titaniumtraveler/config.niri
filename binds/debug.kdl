@@ -1,0 +1,12 @@
+binds {
+    Mod+d {
+        t { toggle-debug-tint;           submap-set; }
+        o { debug-toggle-opaque-regions; submap-set; }
+
+        d { debug-toggle-damage;         submap-set; }
+    Mod+d { debug-toggle-damage;         submap-set; }
+
+            Escape { submap-set; }
+        Mod+Escape { submap-set; }
+    }
+}

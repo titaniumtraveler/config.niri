@@ -1,0 +1,16 @@
+binds {
+    Mod+o {
+        shift+w {
+            focus-workspace "wev"
+            spawn "alacritty" "msg" "create-window" "--command" "bash" "-c" "sleep 0.05; wev"
+            submap-set
+        }
+    }
+}
+
+workspace "wev" {
+    layout {
+        preset-column-widths { proportion 0.5; }
+        default-column-width { proportion 0.5; }
+    }
+}

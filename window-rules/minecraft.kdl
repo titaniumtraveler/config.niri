@@ -1,0 +1,19 @@
+window-rule {
+    match app-id="^org.prismlauncher.PrismLauncher$"
+
+    open-floating     false
+    open-maximized    false
+    open-on-workspace "prismlauncher"
+    tiled-state true
+}
+
+window-rule {
+    match app-id="^Minecraft"
+
+    // opacity 0.5
+
+    open-floating     false
+    open-maximized    false
+    open-on-workspace "minecraft"
+    tiled-state true
+}

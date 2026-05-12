@@ -1,0 +1,25 @@
+include "./minecraft.kdl"
+include "./steam.kdl"
+
+window-rule {
+    match app-id="^CENTERED$"
+
+    default-column-width { proportion 1.0; }
+    open-floating true
+}
+
+window-rule {
+    match title="gmrun"
+    match app-id="Pinentry-gtk"
+
+    open-floating true
+}
+
+window-rule {
+    match app-id="factorio"
+
+    open-floating     false
+    open-maximized    false
+    open-on-workspace "game"
+    tiled-state true
+}

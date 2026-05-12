@@ -1,0 +1,121 @@
+binds {
+          Mod+1 { spawn "niri-workspace-manager"   "goto-register" "1"; }
+          Mod+2 { spawn "niri-workspace-manager"   "goto-register" "2"; }
+          Mod+3 { spawn "niri-workspace-manager"   "goto-register" "3"; }
+          Mod+4 { spawn "niri-workspace-manager"   "goto-register" "4"; }
+          Mod+5 { spawn "niri-workspace-manager"   "goto-register" "5"; }
+          Mod+6 { spawn "niri-workspace-manager"   "goto-register" "6"; }
+          Mod+7 { spawn "niri-workspace-manager"   "goto-register" "7"; }
+          Mod+8 { spawn "niri-workspace-manager"   "goto-register" "8"; }
+          Mod+9 { spawn "niri-workspace-manager"   "goto-register" "9"; }
+
+    Mod+shift+1 { spawn "niri-workspace-manager" "moveto-register" "1"; }
+    Mod+shift+2 { spawn "niri-workspace-manager" "moveto-register" "2"; }
+    Mod+shift+3 { spawn "niri-workspace-manager" "moveto-register" "3"; }
+    Mod+shift+4 { spawn "niri-workspace-manager" "moveto-register" "4"; }
+    Mod+shift+5 { spawn "niri-workspace-manager" "moveto-register" "5"; }
+    Mod+shift+6 { spawn "niri-workspace-manager" "moveto-register" "6"; }
+    Mod+shift+7 { spawn "niri-workspace-manager" "moveto-register" "7"; }
+    Mod+shift+8 { spawn "niri-workspace-manager" "moveto-register" "8"; }
+    Mod+shift+9 { spawn "niri-workspace-manager" "moveto-register" "9"; }
+
+          Mod+a { spawn "niri-workspace-manager"   "goto-register" "a"; }
+          Mod+s { spawn "niri-workspace-manager"   "goto-register" "s"; }
+          Mod+d { spawn "niri-workspace-manager"   "goto-register" "d"; }
+    Mod+shift+a { spawn "niri-workspace-manager" "moveto-register" "a"; }
+    Mod+shift+s { spawn "niri-workspace-manager" "moveto-register" "s"; }
+    Mod+shift+d { spawn "niri-workspace-manager" "moveto-register" "d"; }
+
+    Mod+m {
+            "1" { spawn "niri-workspace-manager"   "goto-register" "1"; }
+            "2" { spawn "niri-workspace-manager"   "goto-register" "2"; }
+            "3" { spawn "niri-workspace-manager"   "goto-register" "3"; }
+            "4" { spawn "niri-workspace-manager"   "goto-register" "4"; }
+            "5" { spawn "niri-workspace-manager"   "goto-register" "5"; }
+            "6" { spawn "niri-workspace-manager"   "goto-register" "6"; }
+            "7" { spawn "niri-workspace-manager"   "goto-register" "7"; }
+            "8" { spawn "niri-workspace-manager"   "goto-register" "8"; }
+            "9" { spawn "niri-workspace-manager"   "goto-register" "9"; }
+
+            "q" { spawn "niri-workspace-manager"   "goto-register" "q"; submap-set; }
+            "w" { spawn "niri-workspace-manager"   "goto-register" "w"; submap-set; }
+            "e" { spawn "niri-workspace-manager"   "goto-register" "e"; submap-set; }
+
+            "a" { spawn "niri-workspace-manager"   "goto-register" "a"; submap-set; }
+            "s" { spawn "niri-workspace-manager"   "goto-register" "s"; submap-set; }
+            "d" { spawn "niri-workspace-manager"   "goto-register" "d"; submap-set; }
+
+            "y" { spawn "niri-workspace-manager"   "goto-register" "y"; submap-set; }
+            "x" { spawn "niri-workspace-manager"   "goto-register" "x"; submap-set; }
+            "c" { spawn "niri-workspace-manager"   "goto-register" "c"; submap-set; }
+
+        shift+1 { spawn "niri-workspace-manager" "moveto-register" "1"; }
+        shift+2 { spawn "niri-workspace-manager" "moveto-register" "2"; }
+        shift+3 { spawn "niri-workspace-manager" "moveto-register" "3"; }
+        shift+4 { spawn "niri-workspace-manager" "moveto-register" "4"; }
+        shift+5 { spawn "niri-workspace-manager" "moveto-register" "5"; }
+        shift+6 { spawn "niri-workspace-manager" "moveto-register" "6"; }
+        shift+7 { spawn "niri-workspace-manager" "moveto-register" "7"; }
+        shift+8 { spawn "niri-workspace-manager" "moveto-register" "8"; }
+        shift+9 { spawn "niri-workspace-manager" "moveto-register" "9"; }
+
+        shift+a { spawn "niri-workspace-manager" "moveto-register" "a"; }
+        shift+s { spawn "niri-workspace-manager" "moveto-register" "s"; }
+        shift+d { spawn "niri-workspace-manager" "moveto-register" "d"; }
+
+        shift+q { spawn "niri-workspace-manager" "moveto-register" "q"; }
+        shift+w { spawn "niri-workspace-manager" "moveto-register" "w"; }
+        shift+e { spawn "niri-workspace-manager" "moveto-register" "e"; }
+
+        b {
+                "1" { spawn "workspace-selector.sh" "workspace" "1"; submap-set; }
+                "2" { spawn "workspace-selector.sh" "workspace" "2"; submap-set; }
+                "3" { spawn "workspace-selector.sh" "workspace" "3"; submap-set; }
+                "4" { spawn "workspace-selector.sh" "workspace" "4"; submap-set; }
+                "5" { spawn "workspace-selector.sh" "workspace" "5"; submap-set; }
+                "6" { spawn "workspace-selector.sh" "workspace" "6"; submap-set; }
+                "7" { spawn "workspace-selector.sh" "workspace" "7"; submap-set; }
+                "8" { spawn "workspace-selector.sh" "workspace" "8"; submap-set; }
+                "9" { spawn "workspace-selector.sh" "workspace" "9"; submap-set; }
+
+                 q { spawn "workspace-selector.sh" "workspace" "q"; submap-set; }
+                 w { spawn "workspace-selector.sh" "workspace" "w"; submap-set; }
+                 e { spawn "workspace-selector.sh" "workspace" "e"; submap-set; }
+
+            shift+1 { spawn "niri-workspace-manager" "unbind"    "1"; }
+            shift+2 { spawn "niri-workspace-manager" "unbind"    "2"; }
+            shift+3 { spawn "niri-workspace-manager" "unbind"    "3"; }
+            shift+4 { spawn "niri-workspace-manager" "unbind"    "4"; }
+            shift+5 { spawn "niri-workspace-manager" "unbind"    "5"; }
+            shift+6 { spawn "niri-workspace-manager" "unbind"    "6"; }
+            shift+7 { spawn "niri-workspace-manager" "unbind"    "7"; }
+            shift+8 { spawn "niri-workspace-manager" "unbind"    "8"; }
+            shift+9 { spawn "niri-workspace-manager" "unbind"    "9"; }
+
+            shift+q { spawn "niri-workspace-manager" "unbind"    "q"; }
+            shift+w { spawn "niri-workspace-manager" "unbind"    "w"; }
+            shift+e { spawn "niri-workspace-manager" "unbind"    "e"; }
+
+                  a { spawn "workspace-selector.sh"  "workspace" "a"; }
+                  s { spawn "workspace-selector.sh"  "workspace" "s"; }
+                  d { spawn "workspace-selector.sh"  "workspace" "d"; }
+            shift+a { spawn "niri-workspace-manager" "unbind"    "a"; }
+            shift+s { spawn "niri-workspace-manager" "unbind"    "s"; }
+            shift+d { spawn "niri-workspace-manager" "unbind"    "d"; }
+
+                  b { spawn "workspace-selector.sh" "workspace"     ; submap-set; }
+
+            Ctrl+j { submap-set; }
+            Escape { submap-set; }
+        Mod+Escape { submap-set; }
+        }
+
+        m { spawn "workspace-selector.sh" "window"; submap-set; }
+
+        f { toggle-window-floating; submap-set; }
+
+            Ctrl+j { submap-set; }
+            Escape { submap-set; }
+        Mod+Escape { submap-set; }
+    }
+}

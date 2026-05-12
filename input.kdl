@@ -1,0 +1,20 @@
+input {
+    keyboard {
+        xkb {
+            model "pc105"
+            layout "de"
+            variant ""
+            options "ctrl:nocaps"
+        }
+    }
+    touchpad { tap; }
+    warp-mouse-to-focus
+    focus-follows-mouse
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+

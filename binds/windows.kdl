@@ -1,0 +1,55 @@
+binds {
+          Mod+h { focus-column-left  ; }
+          Mod+k { focus-window-up    ; }
+          Mod+j { focus-window-down  ; }
+          Mod+l { focus-column-right ; }
+
+    Mod+shift+h { swap-window-left  ; }
+    Mod+shift+k { move-window-up    ; }
+    Mod+shift+j { move-window-down  ; }
+    Mod+shift+l { swap-window-right ; }
+
+     Mod+ctrl+h { move-workspace-to-monitor-left  ; }
+     Mod+ctrl+k { move-workspace-to-monitor-up    ; }
+     Mod+ctrl+j { move-workspace-to-monitor-down  ; }
+     Mod+ctrl+l { move-workspace-to-monitor-right ; }
+
+          Mod+f { toggle-windowed-fullscreen; }
+    Mod+shift+f { 
+        spawn "bash" "-c" r#"
+            { echo 99; sleep 0.01; echo 100; } |
+                jq -c '{ "Action": { "SetWindowHeight": { "change": { "SetProportion": . }}}}' |
+                socat STDIO UNIX:"$NIRI_SOCKET"
+        "#
+    }
+
+    Mod+e { switch-focus-between-floating-and-tiling; }
+
+    Mod+b { toggle-window-rule-opacity; }
+    Mod+w { close-window; }
+
+
+    Mod+v {
+        "1" { set-window-width  "10%"; submap-set; }
+        "2" { set-window-width  "20%"; submap-set; }
+        "3" { set-window-width  "30%"; submap-set; }
+        "4" { set-window-width  "40%"; submap-set; }
+        "5" { set-window-width  "50%"; submap-set; }
+        "6" { set-window-width  "60%"; submap-set; }
+        "7" { set-window-width  "70%"; submap-set; }
+        "8" { set-window-width  "80%"; submap-set; }
+        "9" { set-window-width  "90%"; submap-set; }
+        "0" { set-window-width "100%"; submap-set; }
+
+              s { set-dynamic-cast-window ; submap-set; }
+        shift+s { set-dynamic-cast-monitor; submap-set; }
+
+            v { expand-column-to-available-width; submap-set; }
+        Mod+v { expand-column-to-available-width; submap-set; }
+
+            t { toggle-column-tabbed-display; submap-set;}
+
+            Escape { submap-set; }
+        Mod+Escape { submap-set; }
+    }
+}

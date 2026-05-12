@@ -1,0 +1,27 @@
+output "PNP(AOC) AG276QZD2 2OMR3JA012656" {
+    // 26.7" OLED
+    // Physical size: 590x330 mm
+    // Logical size: 2560x1440
+
+    // mode "2560x1440@240.000"
+    mode "2560x1440@60.001"
+
+    position x=0 y=0
+    scale 1.0
+    variable-refresh-rate on-demand=true
+}
+
+output "BOE 0x0977 Unknown" {
+    // 17" builtin
+    // Physical size: 380x210 mm
+    // Logical size: 2048x1152
+
+    mode "2560x1440@165.003"
+    // mode "2560x1440@40.002"
+
+
+    position x=256 y=1440
+    scale 1.25
+    variable-refresh-rate on-demand=true
+}
+

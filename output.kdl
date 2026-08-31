@@ -24,4 +24,3 @@ output "BOE 0x0977 Unknown" {
     scale 1.25
     variable-refresh-rate on-demand=true
 }
-

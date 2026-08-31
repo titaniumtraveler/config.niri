@@ -15,6 +15,7 @@ binds {
      Mod+ctrl+l { move-workspace-to-monitor-right ; }
 
           Mod+f { toggle-windowed-fullscreen; }
+     Mod+ctrl+f { fullscreen-window; }
     Mod+shift+f { 
         spawn "bash" "-c" r#"
             { echo 99; sleep 0.01; echo 100; } |
@@ -41,8 +42,9 @@ binds {
         "9" { set-window-width  "90%"; submap-set; }
         "0" { set-window-width "100%"; submap-set; }
 
-              s { set-dynamic-cast-window ; submap-set; }
-        shift+s { set-dynamic-cast-monitor; submap-set; }
+              s { set-dynamic-cast-window ;  submap-set; }
+        shift+s { set-dynamic-cast-monitor;  submap-set; }
+         ctrl+s { clear-dynamic-cast-target; submap-set; }
 
             v { expand-column-to-available-width; submap-set; }
         Mod+v { expand-column-to-available-width; submap-set; }

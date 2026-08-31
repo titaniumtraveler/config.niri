@@ -3,6 +3,7 @@ include "./niri-workspace-manager.kdl"
 include "./system-control.kdl"
 include "./windows.kdl"
 include "./debug.kdl"
+include "./vellum.kdl"
 
 binds {
     Mod+Shift+q { quit; }

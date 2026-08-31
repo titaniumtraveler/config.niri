@@ -1,0 +1,9 @@
+binds {
+    Mod+n {
+        n { spawn "vellum" "toggle"; submap-set; }
+        d { spawn "vellum" "clear";  submap-set; }
+
+            Escape { submap-set; }
+        Mod+Escape { submap-set; }
+    }
+}

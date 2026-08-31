@@ -3,7 +3,7 @@ window-rule {
 
     open-floating false
     open-maximized    false
-    open-on-workspace "steam"
+    open-on-workspace "games"
     tiled-state true
 }
 
@@ -11,11 +11,12 @@ window-rule {
     match app-id="^steam$" title="Sign in to Steam"
 
     open-floating true
-    open-on-workspace "steam"
+    open-on-workspace "games"
 }
 
 window-rule {
     match app-id="^voidstranger.exe$"
 
     open-maximized true
+    open-on-workspace "games"
 }

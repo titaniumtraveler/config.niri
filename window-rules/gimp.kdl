@@ -1,0 +1,5 @@
+window-rule {
+    match app-id="^gimp$" title="^Search Actions$"
+
+    open-floating true
+}

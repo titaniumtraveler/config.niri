@@ -8,8 +8,9 @@ input {
         }
     }
     touchpad { tap; }
-    warp-mouse-to-focus
+    warp-mouse-to-focus mode="center-xy-always"
     focus-follows-mouse
+    mod-key "Alt"
 }
 
 gestures {

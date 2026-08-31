@@ -1,6 +1,7 @@
 binds {
     Mod+c {
-        "1" { spawn "ddcutil" "setvcp" "D6" "0x01"; submap-set; }
+            "1" { spawn "ddcutil" "setvcp" "D6" "0x01"; submap-set; }
+        shift+1 { spawn "ddcutil" "setvcp" "D6" "0x05"; submap-set; }
 
               n { spawn "dunstctl" "set-paused" "toggle"; submap-set; }
         shift+n { spawn "dunstctl" "close"              ; submap-set; }
@@ -21,8 +22,6 @@ binds {
             submap-set
         }
 
-        d { debug-toggle-damage; submap-set; }
-
             Escape { submap-set; }
         Mod+Escape { submap-set; }
     }
@@ -37,6 +36,12 @@ binds {
     XF86AudioLowerVolume {
         spawn "pactl" "set-sink-mute"   "@DEFAULT_SINK@" "false"
         spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@"   "-5%"
+    }
+    ctrl+XF86AudioRaiseVolume {
+        spawn "wp_set_volume.sh" "add" "+0.1"
+    }
+    ctrl+XF86AudioLowerVolume {
+        spawn "wp_set_volume.sh" "add" "-0.1"
     }
 
     XF86AudioPlay  { spawn "playerctl" "play-pause"; }

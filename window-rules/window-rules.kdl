@@ -9,6 +9,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id="^gtk-test$"
+
+    default-floating-position x=100 y=100 relative-to="bottom-right"
+    open-floating true
+}
+
+window-rule {
     match title="gmrun"
     match app-id="Pinentry-gtk"
 
@@ -22,4 +29,10 @@ window-rule {
     open-maximized    false
     open-on-workspace "game"
     tiled-state true
+}
+
+window-rule {
+    match app-id="firefox"
+
+    // opacity 0.8
 }

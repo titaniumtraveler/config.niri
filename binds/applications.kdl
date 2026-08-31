@@ -7,14 +7,19 @@ binds {
         q { spawn "alacritty-ui.sh" "qalc";                submap-set; }
         n { spawn "alacritty-ui.sh" "nu";                  submap-set; }
 
+        // w { spawn "firefox" "--profile=/home/jon/ff-till"; submap-set; }
         w { spawn "firefox";                               submap-set; }
         p { spawn "firefox" "--private-window";            submap-set; }
 
         s { spawn "steam";                                 submap-set; }
+        l { spawn "lutris";                                submap-set; }
 
         f { spawn "dolphin";                               submap-set; }
         k { spawn "kdeconnect-app";                        submap-set; }
+
         b { spawn "alacritty-ui.sh" "bluetoothctl";        submap-set; }
+        i { spawn "alacritty-ui.sh" "bash" "-c" "bluetoothctl info; read -n1"; submap-set; }
+
   shift+b { spawn "alacritty-ui.sh" "rlwrap" "brightness"; submap-set; }
 
 
